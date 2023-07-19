@@ -32,6 +32,7 @@ const SpecificBook = () => {
                 inCard:true,
                 title: book.title,
                 price: book.price,
+                image: book.image
             }
             localStorage.setItem('cardBook', JSON.stringify([...cardBooks || [], addedBook]))
             setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])

@@ -10,11 +10,11 @@ const Cart = () => {
 
     const mergedObjects = {};
     cardBooks.forEach(obj => {
-        const { id, count, price, title } = obj;
+        const { id, count, price, title, image } = obj;
         if (mergedObjects.hasOwnProperty(id)) {
             mergedObjects[id].count += count;
         } else {
-            mergedObjects[id] = { id, count, price, title };
+            mergedObjects[id] = { id, count, price, title, image };
         }
     });
     const mergedABooksArray = Object.values(mergedObjects);
@@ -45,6 +45,7 @@ const Cart = () => {
                         return <div className='cart_book' key={index}>
                                     <div className='cart_book_info'>
                                         <div className='cart_book_main_info'>
+                                            <img className='cart_book_img' src={book.image} alt={book.title}/>
                                             <h2 className='cart_txt'>Name: <span>{book.title}</span></h2>
                                             <p className='cart_txt'>Price: <span>{book.price}</span></p>
                                             <p className='cart_txt'>Count: <span>{book.count}</span></p>
