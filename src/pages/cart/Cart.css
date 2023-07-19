@@ -72,6 +72,10 @@
     width: 100%;
     border-radius: 10px;
 }
+.cart_book_img{
+    width: 100%;
+    max-width: 65px;
+}
 .cart_book_info{
     display: flex;
     justify-content: space-between;
