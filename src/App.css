@@ -1,0 +1,5 @@
+.App { 
+    background:url(./img/books_bg.png) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+}

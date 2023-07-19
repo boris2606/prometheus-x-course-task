@@ -1,0 +1,71 @@
+/* Header styles */
+[class*="dark"]{
+    color: #e7eef7 !important;
+    transition: .3s all ease-in-out;
+}
+.header_bg-dark{
+    background-color: #17263a !important;
+}
+.header_bg-dark *{
+    color: #e7eef7 !important;
+}
+
+/* Header mobile styles */
+
+.menu_btn-dark + div{
+    background-color: #17263aad !important;
+}
+.menu_btn-dark + div + div {
+    background-color: #17263a !important;
+}
+.menu_btn-dark + div + div > a {
+    background-color: #e7eef7 !important;
+    color: #17263a !important;
+}
+
+/* App background */
+.app_bg-dark{
+    background-color: #244468;
+}
+
+/* SignOut styles */
+.label_name-dark::placeholder{
+    color: #e7eef7 !important;
+}
+.file_label-dark{
+    background: #17263a !important;
+    border-color: #17263a !important;
+}
+
+/* BookList styles */
+.book_bg-dark{
+    box-shadow: 4px 4px 14px 2px rgba(34, 60, 80, 0.5) !important;
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%) !important;
+}
+.book_bg-dark * {
+    color: #e7eef7 !important;
+}
+
+/* SpecificBook styles */
+.book_content-dark * {
+    color: #e7eef7 !important;
+}
+.value_books-dark {
+    background-color: #e7eef7 !important;
+    color: #17263a !important;
+    outline-color: #407FB9;
+}
+
+/* Cart styles */
+.wrapper_cart-dark * {
+    color: #e7eef7 !important;
+}
+
+/* Footer styles */
+.footer_bg-dark{
+    background-color: #17263a !important;
+}
+.footer_bg-dark p,
+.footer_bg-dark p a {
+    color: #e7eef7;
+}

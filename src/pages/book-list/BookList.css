@@ -1,0 +1,159 @@
+.books_wrapper{
+    min-height: calc(100vh - 95px);
+    padding: 0px 10px 30px;
+    display: flex;
+    flex-flow: column;
+}
+.books_filters_form{
+    margin: 25px 0px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.filters_reset{
+    padding: 5px 10px;
+    font: 700 14px Open Sans;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #649acc;
+    transition: .5s all ease;
+    outline:none;
+    text-decoration: none;
+    transition: .3s all ease;
+}
+.filters_reset:hover{
+    background-color: #244468;
+    color: #fff;
+}
+.books_search{
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    max-width: 200px;
+    box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+    font: 600 14px Raleway;
+    color: #244468;
+}
+.books_search::placeholder{
+    color:#24446882;
+}
+
+.select_content{
+    position: relative;
+}
+.select_arrow{
+    position: absolute;
+    width: 30px;
+    height: 37px;
+    background: #649ACC;
+    right: 0px;
+    border-radius: 0 5px 5px 0;
+    padding: 12px 9px;
+}
+
+.books_value{
+    background-color: white;
+    color:#244468;
+    appearance: none;
+    position: relative;
+    font:600 14px Montserrat;
+    width: 130px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 11px;
+    box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+    background-image: linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%), linear-gradient(to right, #649ACC, #649ACC);
+    background-position: calc(100% - 17px) calc(1em + 4px), calc(100% - 12px) calc(1em + 4px), 100% 0;
+    background-size: 5px 5px, 5px 5px, 2.5em 3.5em;
+    background-repeat: no-repeat;
+}
+
+.books_container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.book{
+    width: 100%;
+    max-width: 230px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    background: linear-gradient(145deg, #d0d6de, #f7ffff);
+    box-shadow:  5px 5px 10px #d5dbe3,
+                -5px -5px 10px #f9ffff;
+    transition: .2s all ease;
+}
+.book:hover {
+    transform: scale(1.05);
+}
+.book_image{
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+    aspect-ratio: 3/4;
+}
+.book_info_content{
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    flex: auto;
+}
+.book_info{
+    padding: 10px 0;
+}
+.book_info_title {
+    font: 700 16px Montserrat;
+    color: #244468;
+}
+.book_author{
+    font: 500 14px Raleway;
+    color:#244468;
+}
+.book_btn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.book_price{
+    font:600 14px Montserrat;
+    color: #244468;
+}
+.view_btn{
+    padding: 5px 10px;
+    font: 700 14px Open Sans;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #649acc;
+    transition: .5s all ease;
+    outline:none;
+    text-decoration: none;
+    transition: .3s all ease;
+}
+.view_btn:hover{
+    background-color: #244468;
+    color: #fff;
+}
+.books_not_found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+.books_not_fount_txt{
+    font: 600 35px Montserrat;
+    color: #649ACC;
+    text-align: center;
+}

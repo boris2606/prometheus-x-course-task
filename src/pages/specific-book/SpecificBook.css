@@ -1,0 +1,181 @@
+.book_wrapper{
+    min-height: calc(100vh - 85px);
+    padding: 15px 10px 30px;
+}
+.book_content{
+    display: flex;
+    flex-flow: column;
+}
+.book_info_single,
+.book_property{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.book_img{
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.book_property{
+    flex: 1;
+}
+.book_property_content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    flex: 1;
+}
+.book_info_single{
+    align-items: flex-start;
+    padding: 15px 20px 0;
+}
+.book_form{
+    display: flex;
+    flex-flow: column;
+    gap: 20px;
+}
+.book_form_row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 220px;
+    align-items: center;
+}
+.book_property_info{
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+}
+.book_property_info h2{
+    font: 700 30px Montserrat;
+    color: #244468;
+}
+.book_property_info p,
+.book_tags_tit{
+    font: 700 15px Raleway;
+    color: #244468;
+}
+.book_property_info p > span,
+.book_tag{
+    font: 500 15px Raleway;
+    color: #244468;
+}
+.book_buy_settings{
+    background: rgb(255 253 253 / 70%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.book_form_row{
+    position: relative;
+}
+.book_form_row p,
+.book_form_row span,
+.book_form_row label{
+    font: 700 15px Montserrat;
+    color: #244468 !important;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.value_books {
+    font: 700 15px Montserrat;
+    padding: 10px 20px 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: #c9dbee;
+}
+
+.count_block{
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    right: 0px;
+    border-radius: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+.count_block_button{
+    width: 20px;
+    border: none;
+    height: 19px;
+    padding-right: 0px;
+    font: 700 14px Montserrat;
+    color: #fff;
+    background-color: #417fb9;
+}
+.count_block hr{
+    border: none;
+    height: 1px;
+    background-color: #fff;
+}
+
+.book_buy_btn{
+    max-width: 102px;
+    align-self: flex-end;
+    padding: 5px 10px;
+    font: 700 14px Open Sans;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #649acc;
+    outline:none;
+    transition: .3s all ease;
+}
+.disable{
+    cursor: not-allowed;
+    color: #fff;
+    background-color: #18232c;
+    opacity: .5;
+    max-width: 102px;
+    align-self: flex-end;
+    padding: 5px 10px;
+    font: 700 14px Open Sans;
+    border-radius: 5px;
+    border: none;
+    outline:none;
+}
+.book_buy_btn:hover{
+    background-color: #244468;
+    color: #fff;
+}
+.book_descr p {
+    font: 500 17px Raleway;
+    margin-top: 30px;
+    color: #244468;
+}
+.all_books_btn{
+    margin-top: 20px;
+    align-self: center;
+    text-decoration: none;
+    padding: 8px;
+    font: 700 14px Open Sans;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #649acc;
+    outline: none;
+    transition: .3s all ease;
+}
+
+.all_books_btn:hover{
+    background-color: #244468;
+    color: #fff;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .book_property_content{
+        flex-flow: column;
+        text-align: center;
+    }
+}

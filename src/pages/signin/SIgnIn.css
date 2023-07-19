@@ -1,0 +1,133 @@
+.sign_in_wrapper{
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign_in_block{
+    display:flex;
+    flex-flow:column;
+    align-items: center;
+}
+.sign_in_block:hover {
+    .file_input_container {
+        opacity: 1;
+    }
+}
+.sign_in_avatar{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+.sign_in_form{
+    display:flex;
+    justify-content: center;
+    flex-flow: column;
+    text-align: center;
+    margin-top: 10px;
+}
+.sign_in_form label {
+    font: 700 16px Open Sans;
+    color: #274f7d;
+}
+.sign_in_form input {
+    width: 200px;
+    margin-bottom: 20px;
+    padding: 7px 5px;
+    border-radius: 5px;
+    border: none;
+    color: #274f7d;
+    background-color: #9abddf61;
+    margin-top: 5px;
+    outline-color: #9abddf80;
+    outline-offset: 0px;
+    transition: .4s all ease-in-out;
+}
+.sign_in_input:focus{
+    background-color: transparent;
+}
+.sign_in_input::placeholder{
+    text-align: center;
+    font: 400 12px Open Sans;
+    color: #223b5892;
+}
+.sign_in_btn {
+    padding: 7px 5px;
+    font: 700 14px Open Sans;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #649acc;
+    transition: .5s all ease;
+    outline-color:#274f7d;
+}
+.sign_in_btn:hover{
+    background: #274f7d;
+    color:#a9cdf1;
+}
+.incorrect{
+    padding: 7px 5px;
+    font: 700 14px Open Sans;
+    cursor: not-allowed;
+    border-radius: 5px;
+    border: none;
+    color: #17263a;
+    background-color: #b5b5b5;
+    transition: .5s all ease;
+    outline-color:#274f7d;
+}
+
+.file_input_container {
+    opacity: 0;
+    position: relative;
+    text-align: center;
+    max-width: 160px;
+    width: 100%;
+    margin: -31px auto 0px;
+    transition: .3s all ease;
+}
+
+.file_label {
+    display: inline-block;
+    width: 100%;
+    max-width: 160px;
+    padding: 5px;
+    color: #649ACC;
+    font: 700 14px Open Sans;
+    background-color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: 1px solid #649ACC;
+    border-radius: 10px 10px 20px 20px;
+}
+
+.file_input {
+    height: 100%;
+    width: 100%;
+    max-width: 160px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+    .file_input_container,
+    .file_label,
+    .file_input{
+        max-width: 200px;
+    }
+    .sign_in_avatar{
+        width: 200px;
+        height: 200px;
+    }
+    .sign_in_form{
+        padding: 0 8px;
+    }
+    .sign_in_block,
+    .sign_in_form input{
+        width: 100%;
+    }
+}
