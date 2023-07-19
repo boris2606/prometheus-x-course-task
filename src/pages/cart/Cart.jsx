@@ -4,6 +4,7 @@ import './Cart.css'
 import cartImg from '../../img/cart_blue.svg'
 import cartImgWhite from '../../img/cart_white.svg'
 import Context from '../../data/Context';
+import imageNotFound from '../../img/imageNotFound.png'
 
 const Cart = () => {
     let {cardBooks,setCardBooks,theme} = useContext(Context)
@@ -45,7 +46,7 @@ const Cart = () => {
                         return <div className='cart_book' key={index}>
                                     <div className='cart_book_info'>
                                         <div className='cart_book_main_info'>
-                                            <img className='cart_book_img' src={book.image} alt={book.title}/>
+                                            <img className='cart_book_img' src={book.image ? book.image : imageNotFound} alt={book.title}/>
                                             <h2 className='cart_txt'>Name: <span>{book.title}</span></h2>
                                             <p className='cart_txt'>Price: <span>{book.price}</span></p>
                                             <p className='cart_txt'>Count: <span>{book.count}</span></p>
