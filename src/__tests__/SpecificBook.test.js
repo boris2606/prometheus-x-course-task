@@ -1,7 +1,7 @@
 import SpecificBook from "../pages/specific-book/SpecificBook";
 import Context from "../data/Context";
 import books from '../data/books.json'
-import React from "react";
+import React, { useEffect } from "react";
 import { render, screen} from '@testing-library/react'
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import '@testing-library/jest-dom/extend-expect'
@@ -11,21 +11,8 @@ const data = {
     ...books
 }
 
-// const data = JSON.parse(localStorage.getItem('data'))
-
-// const fetchData = async () => {
-//     try {
-//         await fetch('books.json')
-//                 .then(response => response.json())
-//                 .then(dataBooks => {
-//                 localStorage.setItem('data', JSON.stringify(dataBooks))
-//                 })
-//     } catch (error) {
-//         console.log(error);
-//     }
-// };
-
 const renderComponent = () => {
+
     render (
         <Context.Provider value={{data, cardBooks:[data]}}>
             <Router initialEntries={["/books/1"]}>
