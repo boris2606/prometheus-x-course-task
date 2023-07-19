@@ -80,14 +80,15 @@
     padding: 2px;
     border: none;
     border-radius: 5px;
+    position: relative;
 }
 .menu_btn::after{
     content: attr(data-count);
     position: absolute;
     background-color: red;
     padding: 2px 5px;
-    right: 10px;
-    top: 7px;
+    right: -7px;
+    top: -7px;
     border-radius: 15px;
     font-size: 10px;
     color: #fff;
