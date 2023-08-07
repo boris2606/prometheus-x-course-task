@@ -6,6 +6,8 @@ const ProtectedRoutes = ({component,error}) => {
     const {data} = useContext(Context)
     const {bookId} = useParams()
 
+    console.log(data);
+
     const signInPerson = localStorage.getItem('user')
     const checkBook = data.books.find(({ id }) => id.toString() === bookId)
 

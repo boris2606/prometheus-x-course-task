@@ -17,7 +17,7 @@ function App() {
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
 
-  const data = JSON.parse(localStorage.getItem('data')) || []
+  const data = JSON.parse(localStorage.getItem('data'))
 
   const fetchData = async () => {
     try {
