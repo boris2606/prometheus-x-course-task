@@ -13,7 +13,7 @@ import Layout from './components/Layout';
 
 function App() {
 
-  const [data,setData] = useState({})
+  const [data,setData] = useState([])
   const [cardBooks,setCardBooks] = useState([])
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
@@ -23,17 +23,18 @@ function App() {
       await fetch('books.json')
               .then(response => response.json())
               .then(dataBooks => {
-                setData(dataBooks)
+                localStorage.setItem('data', JSON.stringify(dataBooks))
               })
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   console.log(data);
 
   useEffect(()=> { 
     fetchData()
+    setData(JSON.parse(localStorage.getItem('data')) || {})
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
   },[setCardBooks])
 
