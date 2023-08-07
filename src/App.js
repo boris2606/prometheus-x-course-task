@@ -23,7 +23,7 @@ function App() {
       await fetch('books.json')
               .then(response => response.json())
               .then(dataBooks => {
-                setData(dataBooks)
+                localStorage.setItem('data', JSON.stringify(dataBooks))
               })
     } catch (error) {
       console.log(error);
@@ -32,6 +32,7 @@ function App() {
 
   useEffect(()=> { 
     fetchData()
+    setData(JSON.parse(localStorage.getItem('data')) || [])
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
   },[setCardBooks])
 
