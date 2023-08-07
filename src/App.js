@@ -7,17 +7,19 @@ import BookList from './pages/book-list/BookList';
 import ProtectedRoutes from './ProtectedRoutes';
 import SpecificBook from './pages/specific-book/SpecificBook'
 import Cart from './pages/cart/Cart';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Error from './pages/error-page/Error';
 import Layout from './components/Layout';
 
 function App() {
-  const [data,setData] = useState([])
+
   const [cardBooks,setCardBooks] = useState([])
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
 
-  const fetchData = async () => {
+  const data = JSON.parse(localStorage.getItem('data')) || []
+
+  const fetchData = useCallback( async () => {
     try {
       await fetch('books.json')
               .then(response => response.json())
@@ -27,15 +29,14 @@ function App() {
     } catch (error) {
       console.log(error);
     }
-  };
+  },[])
 
   console.log(data);
 
   useEffect(()=> { 
     fetchData()
-    setData(JSON.parse(localStorage.getItem('data')) || [])
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
-  },[setCardBooks,data])
+  },[setCardBooks,fetchData])
 
   return (
     <Context.Provider value={{data,cardBooks,setCardBooks,filteredBooks,setFilteredBooks,theme,setTheme}}>
