@@ -35,7 +35,7 @@ function App() {
   useEffect(()=> { 
     fetchData()
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
-  },[setCardBooks,fetchData])
+  },[setCardBooks])
 
   return (
     <main className={theme ? 'app_bg-dark App' : 'App'}>
