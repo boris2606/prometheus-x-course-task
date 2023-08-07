@@ -12,18 +12,18 @@ import Error from './pages/error-page/Error';
 import Layout from './components/Layout';
 
 function App() {
+
+  const [data,setData] = useState([])
   const [cardBooks,setCardBooks] = useState([])
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
-
-  const data = JSON.parse(localStorage.getItem('data'))
 
   const fetchData = async () => {
     try {
       await fetch('books.json')
               .then(response => response.json())
               .then(dataBooks => {
-                localStorage.setItem('data', JSON.stringify(dataBooks))
+                setData(dataBooks)
               })
     } catch (error) {
       console.log(error);
