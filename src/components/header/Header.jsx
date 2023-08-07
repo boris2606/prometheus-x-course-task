@@ -22,6 +22,7 @@ const Header = () => {
     function signOut (){
         localStorage.removeItem('user')
         localStorage.removeItem('cardBook')
+        localStorage.removeItem('data')
         setParsedUser('')
         setCardBooks([])
         setMobile(false)
