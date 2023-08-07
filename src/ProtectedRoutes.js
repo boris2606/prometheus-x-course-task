@@ -6,14 +6,11 @@ const ProtectedRoutes = ({component,error}) => {
     const {data} = useContext(Context)
     const {bookId} = useParams()
 
-    console.log(data);
-
     const signInPerson = localStorage.getItem('user')
-    const checkBook = data.books.find(({ id }) => id.toString() === bookId)
-
+    
     if (!signInPerson){
         return <Navigate to='/'/>
-    } else if ( bookId && !checkBook ) {
+    } else if ( bookId && !data.books.find(({ id }) => id.toString() === bookId)) {
         return error
     } else { 
         return component
