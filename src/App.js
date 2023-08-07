@@ -13,7 +13,7 @@ import Layout from './components/Layout';
 
 function App() {
 
-  const [data,setData] = useState([])
+  const [data,setData] = useState({})
   const [cardBooks,setCardBooks] = useState([])
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
