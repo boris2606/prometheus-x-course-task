@@ -13,10 +13,11 @@ import Layout from './components/Layout';
 
 function App() {
 
-  const [data,setData] = useState([])
   const [cardBooks,setCardBooks] = useState([])
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
+
+  const data = JSON.parse(localStorage.getItem('data')) || []
 
   const fetchData = async () => {
     try {
@@ -34,7 +35,6 @@ function App() {
 
   useEffect(()=> { 
     fetchData()
-    setData(JSON.parse(localStorage.getItem('data')) || {})
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
   },[setCardBooks])
 
