@@ -17,7 +17,7 @@ function App() {
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
 
-  const data = JSON.parse(localStorage.getItem('data'))
+  const data = JSON.parse(localStorage.getItem('data')) || []
 
   const fetchData = useCallback( async () => {
       try {
@@ -31,7 +31,7 @@ function App() {
       }
     }
   ,[])
-  
+
   useEffect(()=> { 
     fetchData()
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
