@@ -37,8 +37,8 @@ function App() {
   },[setCardBooks])
 
   return (
-    <Context.Provider value={{data,cardBooks,setCardBooks,filteredBooks,setFilteredBooks,theme,setTheme}}>
-      <main className={theme ? 'app_bg-dark App' : 'App'}>
+    <main className={theme ? 'app_bg-dark App' : 'App'}>
+      <Context.Provider value={{data,cardBooks,setCardBooks,filteredBooks,setFilteredBooks,theme,setTheme}}>
         <Routes>
           <Route path='/' element={<Layout/>}>
             <Route index element={<SignIn/>}/>
@@ -48,8 +48,8 @@ function App() {
             <Route path='*' element={<Error/>}/>
           </Route>
         </Routes>
-      </main>
-    </Context.Provider>
+      </Context.Provider>
+    </main>
   );
 }
 

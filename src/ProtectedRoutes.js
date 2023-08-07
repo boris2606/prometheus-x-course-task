@@ -7,10 +7,11 @@ const ProtectedRoutes = ({component,error}) => {
     const {bookId} = useParams()
 
     const signInPerson = localStorage.getItem('user')
-    
+    const checkBook = data.books.find(({ id }) => id.toString() === bookId)
+
     if (!signInPerson){
         return <Navigate to='/'/>
-    } else if ( bookId && !data.books.find(({ id }) => id.toString() === bookId)) {
+    } else if ( bookId && !checkBook ) {
         return error
     } else { 
         return component
