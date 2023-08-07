@@ -32,7 +32,7 @@ function App() {
 
   useEffect(()=> { 
     fetchData()
-    setData(JSON.parse(localStorage.getItem('data')) || [])
+    setData(JSON.parse(localStorage.getItem('data')))
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
   },[setCardBooks])
 
