@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import './theme-styles/Theme.css'
+import books from './data/books.json'
 import SignIn from "./pages/signin/SignIn"
 import Context from './data/Context';
 import BookList from './pages/book-list/BookList';
@@ -17,23 +18,11 @@ function App() {
   const [filteredBooks,setFilteredBooks] = useState([])
   const [theme,setTheme] = useState(false)
 
-  const data = JSON.parse(localStorage.getItem('data')) || []
-
-  const fetchData = useCallback( async () => {
-      try {
-        await fetch('books.json')
-                .then(response => response.json())
-                .then(dataBooks => {
-                  localStorage.setItem('data', JSON.stringify(dataBooks))
-                })
-      } catch (error) {
-        console.log(error);
-      }
-    }
-  ,[])
+  const data = {
+    ...books
+  }
 
   useEffect(()=> { 
-    fetchData()
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
   },[setCardBooks])
 
