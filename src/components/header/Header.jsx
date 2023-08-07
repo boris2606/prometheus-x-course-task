@@ -22,7 +22,6 @@ const Header = () => {
     function signOut (){
         localStorage.removeItem('user')
         localStorage.removeItem('cardBook')
-        localStorage.removeItem('data')
         setParsedUser('')
         setCardBooks([])
         setMobile(false)
@@ -57,7 +56,7 @@ const Header = () => {
                     <p className='menu_user'>{user}</p>
                     <Link className='menu_books_link' to='/books' onClick={() => setMobile(!mobile)}>Books list</Link>
                     <Link className='menu_card_link' to='/cart' onClick={() => setMobile(!mobile)}>Cart <span className='menu_cart_count'>{filtered.length}</span></Link>
-                    <Link to='/' className='menu_signout_btn' onClick={signOut} >Sign-Out</Link>
+                    <Link to='/' className='menu_signout_btn' onClick={signOut}>Sign-Out</Link>
                 </div>
             </div>
         </header>
