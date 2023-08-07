@@ -7,7 +7,7 @@ import BookList from './pages/book-list/BookList';
 import ProtectedRoutes from './ProtectedRoutes';
 import SpecificBook from './pages/specific-book/SpecificBook'
 import Cart from './pages/cart/Cart';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import Error from './pages/error-page/Error';
 import Layout from './components/Layout';
 
@@ -19,22 +19,23 @@ function App() {
 
   const data = JSON.parse(localStorage.getItem('data'))
 
-  const fetchData = async () => {
-    try {
-      await fetch('books.json')
-              .then(response => response.json())
-              .then(dataBooks => {
-                localStorage.setItem('data', JSON.stringify(dataBooks))
-              })
-    } catch (error) {
-      console.log(error);
+  const fetchData = useCallback( async () => {
+      try {
+        await fetch('books.json')
+                .then(response => response.json())
+                .then(dataBooks => {
+                  localStorage.setItem('data', JSON.stringify(dataBooks))
+                })
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-
+  ,[])
+  
   useEffect(()=> { 
     fetchData()
     setCardBooks(JSON.parse(localStorage.getItem('cardBook')) || [])
-  },[setCardBooks])
+  },[setCardBooks,fetchData])
 
   return (
     <main className={theme ? 'app_bg-dark App' : 'App'}>
